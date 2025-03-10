@@ -44,6 +44,7 @@
 
 
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const user = useSelector((store) => store.user);
@@ -51,7 +52,7 @@ const Navbar = () => {
   return (
     <div className="navbar bg-base-300 px-4">
       <div className="flex-1">
-        <a className="btn btn-ghost text-2xl font-bold">DevTinder</a>
+        <Link to="/" className="btn btn-ghost text-2xl font-bold">DevTinder</Link>
       </div>
 
       {user ? (
@@ -80,9 +81,9 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-lg z-50 mt-3 w-52 p-2 shadow-md"
             >
               <li>
-                <a className="flex justify-between">
+                <Link to="/profile" className="flex justify-between">
                   Profile <span className="badge">New</span>
-                </a>
+                </Link>
               </li>
               <li><a>Settings</a></li>
               <li><a>Logout</a></li>
